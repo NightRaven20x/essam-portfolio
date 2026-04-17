@@ -28,6 +28,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 0.3rem;
+  text-decoration: none;
 }
 
 .location-text,
