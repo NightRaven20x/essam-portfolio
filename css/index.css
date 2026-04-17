@@ -1,0 +1,189 @@
+/* --- HERO WRAPPER (Stacks Top Row and Bottom Phrase) --- */
+.hero-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-bottom: 5rem;
+}
+
+/* --- TOP ROW (Side by Side) --- */
+.hero-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* --- MASSIVE TYPOGRAPHY --- */
+.hero-text h1 {
+  font-family: var(--font-display);
+  font-size: 200px;
+  line-height: 145px;
+  letter-spacing: -5px;
+  margin: 0;
+  max-width: 900px;
+}
+
+/* --- HERO IMAGE --- */
+.hero-image {
+  width: 420px;
+  max-width: 100%;
+  height: auto;
+  flex-shrink: 0;
+}
+
+/* --- HERO IMAGE WRAPPER (For the Flash Effect) --- */
+.hero-image-container {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0; /* Ensures the layout doesn't break in flexbox */
+}
+
+/* --- THE INVISIBLE FLASHBULB --- */
+.hero-image-container::after {
+  content: '';
+  position: absolute;
+  
+  /* Coordinates to place the flash over the phone camera */
+  top: 24.3%;  
+  left: 71%; 
+  
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  
+  /* Creates the massive, glowing light spread */
+  box-shadow: 0 0 60px 30px rgba(255, 255, 255, 0.95);
+  
+  opacity: 0; /* Hidden by default */
+  pointer-events: none; /* Stops the invisible dot from blocking your mouse */
+  z-index: 10;
+}
+
+/* --- THE HOVER TRIGGER --- */
+.hero-image-container:hover::after {
+  animation: camera-flash 0.6s ease-out;
+}
+
+/* --- THE FLASH ANIMATION SEQUENCE --- */
+@keyframes camera-flash {
+  0% { 
+    opacity: 0; 
+    transform: scale(0.1); 
+  }
+  15% { 
+    opacity: 1; 
+    transform: scale(1.5); /* Instantly blasts to full brightness and size */
+  }
+  100% { 
+    opacity: 0; 
+    transform: scale(1); /* Slowly fades out like a real bulb cooling down */
+  }
+}
+
+/* --- HERO PHRASE (BOTTOM) --- */
+.Phrase-hero {
+  text-align: center;
+  width: 100%;
+}
+
+.Phrase-hero h2 {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  color: var(--text-main);
+  text-transform: uppercase;
+  margin-top: -50px;
+}
+
+.rubric-intro {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.4);
+  max-width: 800px;
+  margin: 0 auto;
+  text-transform: none;
+}
+
+/* =========================================
+    PROJECT SHOWCASE SECTION
+   ========================================= */
+.project-showcase {
+  margin-bottom: 8rem;
+}
+
+.feedback-header h2 {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+/* =========================================
+   RESPONSIVE - TABLET (max 900px)
+   ========================================= */
+@media (max-width: 900px) {
+  .hero-wrapper {
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .hero-top-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .hero-image {
+    width: 280px;
+  }
+
+  .hero-text h1 {
+    font-size: 100px;
+    line-height: 80px;
+    letter-spacing: -3px;
+    max-width: 100%;
+  }
+
+  .Phrase-hero h2 {
+    font-size: 15px;
+    margin-top: 0;
+  }
+
+  .project-showcase {
+    margin-bottom: 4rem;
+  }
+}
+
+/* =========================================
+   RESPONSIVE - MOBILE (max 600px)
+   ========================================= */
+@media (max-width: 600px) {
+  .hero-wrapper {
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-image {
+    width: 200px;
+  }
+
+  .hero-text h1 {
+    font-size: 58px;
+    line-height: 50px;
+    letter-spacing: -2px;
+  }
+
+  .Phrase-hero h2 {
+    font-size: 11px;
+    margin-top: 0;
+    line-height: 1.6;
+  }
+
+  .rubric-intro {
+    font-size: 0.78rem;
+  }
+
+  .project-showcase {
+    margin-bottom: 2.5rem;
+  }
+}

@@ -1,0 +1,168 @@
+/* =========================================
+   COMPONENT - GLOBAL FOOTER
+   ========================================= */
+
+.global-footer {
+  margin-top: 4rem;
+  padding: 2rem 0;
+  font-size: 0.8rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  color: var(--text-main);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer-image {
+  width: 24px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent-green);
+}
+
+.social-links a:hover .footer-image {
+  transform: translateY(-3px) scale(1.1);
+}
+
+/* --- FOOTER TOP ROW (Split Layout) --- */
+.footer-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+/* --- LEFT SIDE: MASSIVE TEXT --- */
+.footer-massive-text h1 {
+  font-family: var(--font-display);
+  font-size: 10rem;
+  line-height: 0.85;
+  letter-spacing: -3px;
+  margin: 0;
+  text-align: center;
+}
+
+.book-appointment {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 0.85;
+  letter-spacing: 1px;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+/* --- RIGHT SIDE: FORM SECTION --- */
+.footer-form-section {
+  flex: 0 0 450px;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-form-section h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.footer-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 0 0 1.5rem 0;
+}
+
+/* --- SLEEK DARK INPUT STYLING --- */
+.mini-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.mini-contact-form input:focus,
+.mini-contact-form textarea:focus {
+  background-color: #333333;
+}
+
+.mini-contact-form input::placeholder,
+.mini-contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* =========================================
+   RESPONSIVE - TABLET (max 900px)
+   ========================================= */
+@media (max-width: 900px) {
+  .footer-top-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .footer-massive-text h1 {
+    font-size: 6rem;
+    letter-spacing: -1px;
+  }
+
+  .footer-form-section {
+    flex: unset;
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE - MOBILE (max 600px)
+   ========================================= */
+@media (max-width: 600px) {
+  .footer-massive-text h1 {
+    font-size: 4rem;
+  }
+
+  .book-appointment {
+    font-size: 1.4rem;
+  }
+
+  .footer-form-section {
+    max-width: 100%;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .social-links {
+    gap: 1.2rem;
+  }
+
+  .global-footer {
+    margin-top: 2.5rem;
+  }
+}

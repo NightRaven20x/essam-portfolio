@@ -1,0 +1,82 @@
+/* =========================================
+   SUCCESS PAGE STYLES
+   ========================================= */
+
+.success-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 60vh;
+    /* Pushes it perfectly into the center of the screen */
+    margin-bottom: 8rem;
+    padding: 0 1.5rem;
+    /* Prevents text from touching the edge of phone screens */
+
+    /* Triggers the entrance animation */
+    opacity: 0;
+    animation: smoothEntrance 0.8s ease-out forwards;
+}
+
+.success-container h1 {
+    font-family: var(--font-display);
+    font-size: 4.5rem;
+    color: var(--accent-green);
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    line-height: 1.1;
+}
+
+.success-container p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-bottom: 3rem;
+    text-transform: none;
+    line-height: 1.8;
+}
+
+/* --- THE ENTRANCE ANIMATION --- */
+@keyframes smoothEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+        /* Starts slightly lower down */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        /* Slides up into perfect position */
+    }
+}
+
+/* =========================================
+   RESPONSIVE - TABLET
+   ========================================= */
+@media (max-width: 900px) {
+    .success-container h1 {
+        font-size: 3.5rem;
+    }
+}
+
+/* =========================================
+   RESPONSIVE - MOBILE
+   ========================================= */
+@media (max-width: 600px) {
+    .success-container {
+        min-height: 50vh;
+    }
+
+    .success-container h1 {
+        font-size: 2.5rem;
+        /* Shrinks the massive text to fit phone screens */
+        letter-spacing: 1px;
+    }
+
+    .success-container p {
+        font-size: 0.95rem;
+        margin-bottom: 2.5rem;
+    }
+}

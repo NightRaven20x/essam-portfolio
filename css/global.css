@@ -1,0 +1,465 @@
+/* =========================================
+   ESSAM PORTFOLIO - GLOBAL FOUNDATION
+   ========================================= */
+
+/* --- 1. GLOBAL VARIABLES --- */
+:root {
+  --bg-color: #181616;
+  --text-main: #ffffff;
+  --accent-green: #699b43;
+  --font-mono: "Roboto Mono", monospace;
+  --font-display: "Archivo Black", sans-serif;
+}
+
+/* --- 2. BASE STYLES --- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-mono);
+  line-height: 1.6;
+  margin: 0;
+  padding: 2rem 5%;
+  text-transform: uppercase;
+}
+
+/* --- GLOBAL INTERACTIVE CURSORS --- */
+a, 
+button, 
+select, 
+summary, 
+input[type="radio"], 
+input[type="submit"], 
+.dropdown-select,
+.radio-label {
+  cursor: crosshair;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- 3. REUSABLE UI COMPONENTS --- */
+.highlight-box {
+  background-color: var(--accent-green);
+  color: var(--bg-color);
+  padding: 0.2rem 0.5rem;
+  font-weight: bold;
+  display: inline-block;
+  transition: all 0.3s ease;
+  cursor: crosshair;
+  border-radius: 5px;
+}
+
+.highlight-box:hover {
+  background-color: var(--text-main);
+  color: var(--bg-color);
+}
+
+/* --- 4. FORM COMPONENTS (Reusable) --- */
+.dark-input {
+  background-color: #2a2a2a;
+  border: none;
+  padding: 1rem;
+  color: var(--text-main);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  outline: none;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 0.2rem;
+}
+
+.dark-input:focus {
+  background-color: #333333;
+}
+
+.dark-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* --- REUSABLE BUTTON --- */
+.btn-primary {
+  background-color: var(--accent-green);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 0rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 100%;
+  cursor: crosshair;
+}
+
+.btn-primary:hover {
+  background-color: var(--text-main);
+  color: var(--bg-color);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); 
+  transition: all 0.3s ease;
+  
+}
+
+/* --- 5. REUSABLE PROJECT CARDS --- */
+.project-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: stretch;
+  margin-bottom: 8rem;
+}
+
+.project-card:last-child {
+  margin-bottom: 0;
+}
+
+/* Typography & Layout */
+.project-number {
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+
+.project-number .dimmed {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.project-title {
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+.project-description {
+  text-transform: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  max-width: 95%;
+}
+
+/* Data Table */
+.project-meta {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-meta li {
+  display: flex;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.85rem;
+}
+
+.meta-key {
+  flex: 0 0 35%;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.meta-value {
+  flex: 1;
+  color: var(--text-main);
+}
+
+.meta-link {
+  text-decoration: none;
+  text-transform: lowercase;
+  transition: color 0.3s ease;
+  word-break: break-all;
+  color: var(--accent-green);
+}
+
+.meta-link:hover {
+  color: var(--accent-green);
+}
+
+/* Visual Mockup Container */
+.project-visual {
+  background-color: #0b100d;
+  border-radius: 20px;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-visual img {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.6));
+}
+
+/* Color Palette Swatches */
+.color-palette {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.color-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-transform: uppercase;
+}
+
+.color-swatch {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
+}
+
+/* --- 6. REUSABLE FEEDBACK CARDS --- */
+.feedback-section {
+  margin-bottom: 8rem;
+}
+
+.feedback-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.feedback-header h2 {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.feedback-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.feedback-card {
+  background-color: #0b100d;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  border-top: 3px solid var(--accent-green);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feedback-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.feedback-quote {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  text-transform: none;
+  position: relative;
+  z-index: 2;
+}
+
+/* The subtle oversized quote mark in the background */
+.feedback-card::before {
+  content: '"';
+  font-family: var(--font-display);
+  font-size: 10rem;
+  color: rgba(105, 155, 67, 0.05); 
+  position: absolute;
+  top: -2rem;
+  left:1rem;
+  z-index: 1;
+  line-height: 1;
+}
+
+.feedback-author {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.author-name {
+  font-family: var(--font-mono);
+  color: var(--text-main);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.author-title {
+  font-size: 0.8rem;
+  color: var(--accent-green);
+  margin-top: 0.3rem;
+  letter-spacing: 1px;
+}
+
+/* Mobile responsiveness for the header */
+@media (max-width: 600px) {
+  .feedback-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .feedback-header h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* =========================================
+   RESPONSIVE - TABLET (max 900px)
+   ========================================= */
+@media (max-width: 900px) {
+  body {
+    padding: 1.5rem 4%;
+  }
+
+  .project-card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 5rem;
+  }
+
+  .project-visual {
+    order: -1; /* image on top for mobile */
+  }
+
+  .project-number,
+  .project-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* =========================================
+   RESPONSIVE - MOBILE (max 600px)
+   ========================================= */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem 4%;
+  }
+
+  .project-number,
+  .project-title {
+    font-size: 1.2rem;
+  }
+
+  .project-description {
+    font-size: 0.85rem;
+    max-width: 100%;
+  }
+
+  .project-meta li {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .meta-key {
+    flex: unset;
+    font-size: 0.75rem;
+  }
+}
+
+
+/* =========================================
+   HAMBURGER MENU & MOBILE NAV
+   ========================================= */
+
+/* Hide the hamburger button on desktop screens */
+.hamburger-menu {
+    display: none; 
+    flex-direction: column;
+    gap: 6px;
+    background: transparent;
+    border: none;
+    cursor: crosshair;
+    z-index: 1000; /* Ensures the button stays on top of the menu when open */
+    padding: 0;
+}
+
+/* The three lines of the hamburger */
+.hamburger-menu .bar {
+    width: 30px;
+    height: 3px;
+    background-color: var(--text-main);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* =========================================
+   RESPONSIVE (Max Width: 900px)
+   ========================================= */
+@media (max-width: 900px) {
+    /* Show the hamburger button */
+    .hamburger-menu {
+        display: flex; 
+    }
+
+    /* Transform the normal nav into a sliding side-panel */
+    .top-right-nav {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Hides the menu completely off-screen to the right */
+        height: 100vh;
+        width: 70%;
+        max-width: 330px;
+        background-color: #0b100d; /* Premium dark agency background */
+        border-left: 2px solid var(--accent-green);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.4s cubic-bezier(0.77, 0.2, 0.05, 1); /* Ultra-smooth slide physics */
+        z-index: 999;
+        box-shadow: -15px 0 40px rgba(0, 0, 0, 0.7);
+    }
+
+    /* When the JavaScript adds the "open" class, slide it into view! */
+    .top-right-nav.open {
+        right: 0; 
+    }
+
+    /* --- HAMBURGER TO 'X' ANIMATION --- */
+    /* Top line rotates down */
+    .hamburger-menu.open .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+        background-color: var(--accent-green);
+    }
+    /* Middle line fades out */
+    .hamburger-menu.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+    /* Bottom line rotates up */
+    .hamburger-menu.open .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+        background-color: var(--accent-green);
+    }
+}

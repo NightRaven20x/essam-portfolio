@@ -1,0 +1,109 @@
+/* =========================================
+   BLOG PAGE STYLES
+   ========================================= */
+
+.blog-container {
+    max-width: 900px; /* Keeps line length readable for articles */
+    margin: 0 0 8rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.blog-card {
+    background-color: #0b100d;
+    padding: 3rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent-green);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.blog-meta {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.blog-date {
+    font-family: var(--font-mono);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.blog-category {
+    font-family: var(--font-mono);
+    background-color: #2a2a2a;
+    color: var(--accent-green);
+    padding: 0.3rem 0.8rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.blog-card h2 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--text-main);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+}
+
+.blog-card p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    text-transform: none; /* Crucial for readability */
+}
+
+.read-more-link {
+    font-family: var(--font-mono);
+    color: var(--accent-green);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.read-more-link span {
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover .read-more-link span {
+    transform: translateX(5px); /* Arrow slides right on card hover */
+}
+
+.read-more-link:hover {
+    color: var(--text-main);
+}
+
+/* =========================================
+   RESPONSIVE - MOBILE (max 600px)
+   ========================================= */
+@media (max-width: 600px) {
+    .blog-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .blog-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .blog-meta {
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+}

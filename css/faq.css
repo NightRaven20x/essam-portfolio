@@ -1,0 +1,67 @@
+/* =========================================
+   FAQ ACCORDION STYLES
+   ========================================= */
+
+.faq-container {
+    max-width: 900px; /* Keeps the text readable, not stretching across the whole screen */
+    margin: 0 0 8rem 0; /* Breathing room before the footer */
+}
+
+/* The wrapper for each question */
+.faq-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem 0;
+}
+
+/* The Question Text */
+.faq-question {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    color: var(--text-main);
+    cursor: pointer; 
+    list-style: none; 
+    position: relative;
+    padding-right: 2rem; 
+    transition: color 0.3s ease;
+}
+
+/* Hides the default arrow in Safari/Chrome */
+.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+.faq-question:hover {
+    color: var(--accent-green);
+}
+
+/* Creating a custom "+" symbol using CSS */
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: var(--accent-green);
+    transition: transform 0.3s ease;
+}
+
+/* Change the "+" to an "x" when the details tag is open */
+details[open] .faq-question::after {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+/* The Answer Text */
+.faq-answer {
+    padding-top: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    text-transform: none; /* Turn off uppercase for readable paragraphs */
+}
+
+/* Highlight tags inside the answers to pop slightly */
+.faq-answer strong {
+    color: var(--text-main);
+    font-weight: bold;
+}
