@@ -415,6 +415,33 @@ img {
 }
 
 /* =========================================
+   CUSTOM SCROLLBAR
+   ========================================= */
+
+/* For Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+  width: 10px; /* Makes the scrollbar slightly thinner and sleeker */
+}
+
+/* The background track of the scrollbar */
+::-webkit-scrollbar-track {
+  background: #0b100d; 
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* The draggable handle (thumb) */
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent-green);
+  border-radius: 10px;
+  border: 2px solid #0b100d; /* Creates a clean gap between the green thumb and the track edge */
+}
+
+/* Hover state for the thumb */
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-main);
+}
+
+/* =========================================
    RESPONSIVE (Max Width: 900px)
    ========================================= */
 @media (max-width: 900px) {
